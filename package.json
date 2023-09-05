@@ -1,0 +1,16 @@
+{
+  "name": "kodkvalldirectus",
+  "version": "1.0.0",
+  "description": "Base project for KXN code night Directus/API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joakim Sundqvist",
+  "license": "ISC",
+  "dependencies": {
+    "directus": "^10.6.1",
+    "directus-extension-wpslug-interface": "^1.1.0",
+    "sqlite3": "^5.1.6"
+  }
+}
