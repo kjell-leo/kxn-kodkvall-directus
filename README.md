@@ -2,7 +2,7 @@
 The purpose of this project is to get access to a simple web page REST-api, which can run locally on your computer.  
 
 The base setup includes the following content types: home page, about page, pages and posts (with categories). The project comes with template data in database.
-
+  
 ## Start project
 npm install  
 npx directus start  
@@ -17,92 +17,144 @@ When you are logged in, you can add, update or delete any content.
 You also have full access to change the behavior of this Directus project. But if you do that, other information in this README may become obsolete.  
 
 ## REST-API endpoint examples
-
+  
 ### Start page
-
+  
+---  
+  
 #### http://127.0.0.1:8055/items/startpage
 Fetch startpage data.  
   
 Contains title, hero (id) and content (HTML).
-
-#### http://127.0.0.1:8055/items/startpage?fields=&ast;.&ast;
+  
+---  
+  
+#### [http://127.0.0.1:8055/items/startpage?fields=&ast;.&ast;](http://127.0.0.1:8055/items/startpage?fields=*.*)
 Fetch startpage data, including hero image metadata. This is required when you want to display hero image in frontend. See Assets endpoint example below to learn how to display images in your frontend application.  
   
 Contains title, hero (metadata) and content.
 
-### About page 
+### About page  
+  
+---  
+  
 #### http://127.0.0.1:8055/items/about  
 Fetch about page data.  
 
 Contains content (HTML).  
 
-### Pages
+### Pages  
+  
+---  
+  
 #### http://127.0.0.1:8055/items/pages
 Fetch all pages data.  
 
 Each page contains id, date created, date updated, title, content (HTML), slug, hero (id).
-
-#### http://127.0.0.1:8055/items/pages?fields=&ast;.&ast;  
+  
+---  
+  
+#### [http://127.0.0.1:8055/items/pages?fields=&ast;.&ast;](http://127.0.0.1:8055/items/pages?fields=*.*)
 Fetch all pages data including hero image metadata.  
 
 Each page contains id, date created, date updated, title, content (HTML), slug, hero (metadata).  
 
-### Page
+### Page  
+  
+---  
+  
 #### http://127.0.0.1:8055/items/pages/{{id}}
 Fetch page data by id.  
   
+Example: http://127.0.0.1:8055/items/pages/1
+  
 Contains id, date created, date updated, title, content (HTML), slug, hero (id).  
-
-#### http://127.0.0.1:8055/items/pages/{{id}}?fields=&ast;.&ast;  
+  
+---  
+  
+#### [http://127.0.0.1:8055/items/pages/{{id}}?fields=&ast;.&ast;](http://127.0.0.1:8055/items/pages/{{id}}?fields=*.*)
 Fetch page data by id, including hero metadata.  
+
+Example: [http://127.0.0.1:8055/items/pages/2?fields=&ast;.&ast;](http://127.0.0.1:8055/items/pages/2?fields=*.*)
   
 Contains id, date created, date updated, title, content (HTML), slug, hero (metadata).  
-
+  
+---  
+  
 #### http://127.0.0.1:8055/items/pages?filter[slug][_eq]={{slug}}
 Fetch page data by slug.  
+
+Example: http://127.0.0.1:8055/items/pages?filter[slug][_eq]=page-one
   
 Contains id, date created, date updated, title, content (HTML), slug, hero (id).  
-
-#### http://127.0.0.1:8055/items/pages?fields=*.*&filter[slug][_eq]={{slug}}
+  
+---  
+  
+#### [http://127.0.0.1:8055/items/pages?filter[slug][_eq]={{slug}}&fields=&ast;.&ast;](http://127.0.0.1:8055/items/pages?filter[slug][_eq]={{slug}}&fields=*.*)
 Fetch page data by slug, including hero metadata.  
+
+Example: [http://127.0.0.1:8055/items/pages?filter[slug][_eq]=page-two&fields=&ast;.&ast;](http://127.0.0.1:8055/items/pages?filter[slug][_eq]=page-two&fields=*.*)
   
 Contains id, date created, date updated, title, content (HTML), slug, hero (metadata).  
 
-### Posts
+### Posts  
+  
+---  
+  
 #### http://127.0.0.1:8055/items/posts
 Fetch all posts data.  
 
 Each post contains id, date created, date updated, title, content (HTML), categories (id).  
-
-#### http://127.0.0.1:8055/items/posts?fields=&ast;.&ast;.&ast;  
+  
+---  
+  
+#### [http://127.0.0.1:8055/items/posts?fields=&ast;.&ast;.&ast;](http://127.0.0.1:8055/items/posts?fields=*.*.*)
 Fetch all posts data including categories metadata.  
 
 Each post contains iid, date created, date updated, title, content (HTML), categories (metadata).  
-
+  
+---  
+  
 #### http://127.0.0.1:8055/items/posts?filter[categories][categories_id][id][_in]={{id:s}}
-Fetch all posts data. Filter by category id. (id:s is a comma seperated list like 1,2,5)  
+Fetch all posts dataand ilter by category id. (id:s is a comma seperated list like 1,2,5)  
 
+Example: http://127.0.0.1:8055/items/posts?filter[categories][categories_id][id][_in]=1,2,5
+  
 Each post contains id, date created, date updated, title, content (HTML), categories (id).  
 
-### Post
+### Post  
+  
+---  
+  
 #### http://127.0.0.1:8055/items/posts/{{id}}
 Fetch post data by id.  
+
+Example: http://127.0.0.1:8055/items/posts/2
   
 contains id, date created, date updated, title, content (HTML), categories (id).   
-
-#### http://127.0.0.1:8055/items/posts/{{id}}?fields=&ast;.&ast;.&ast;  
+  
+---  
+  
+#### [http://127.0.0.1:8055/items/posts/{{id}}?fields=&ast;.&ast;.&ast;](http://127.0.0.1:8055/items/posts/{{id}}?fields=*.*.*)
 Fetch post data by id, including categories metadata.  
+
+Example: [http://127.0.0.1:8055/items/posts/3?fields=&ast;.&ast;.&ast;](http://127.0.0.1:8055/items/posts/3?fields=*.*.*)
   
 contains id, date created, date updated, title, content (HTML), categories (metadata).  
 
-### Categories
-
+### Categories  
+  
+---  
+  
 #### http://127.0.0.1:8055/items/categories
 Fetch all categories data.  
 
 Each category contains id and category title.
 
-### Assets
+### Assets  
+  
+---  
+  
 #### http://127.0.0.1:8055/assets/{{id}}/{{filename_download}}
 Fetch asset/image. Can be used as HTML img src in frontend. Use starpage and page hero metadata to find id and file_download.  
   
