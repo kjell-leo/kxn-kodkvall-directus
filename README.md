@@ -1,7 +1,7 @@
 # kxn-kodkvall-directus  
 The purpose of this project is to get access to a simple web page REST-api, which can run locally on your computer.  
 
-The base setup includes the following content types: home page, about page, pages and posts (with categories).
+The base setup includes the following content types: home page, about page, pages and posts (with categories). Te project comes with template data in database.
 
 ## Start project
 npm install  
