@@ -63,7 +63,7 @@ Fetch page data by slug.
   
 Contains id, date created, date updated, title, content (HTML), slug, hero (id).  
 
-#### http://127.0.0.1:8055/items/pages?fields=&ast;.&ast;&filter[slug][_eq]={{slug}}
+#### http://127.0.0.1:8055/items/pages?fields=*.*&filter[slug][_eq]={{slug}}
 Fetch page data by slug, including hero metadata.  
   
 Contains id, date created, date updated, title, content (HTML), slug, hero (metadata).  
