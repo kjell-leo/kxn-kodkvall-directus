@@ -18,4 +18,7 @@ You also have full access to change the behavior of this Directus project. But i
 
 ## REST-API endpoint examples
 
- 
+### Startpage
+
+#### http://127.0.0.1:8055/items/startpage
+Fetch startpage data
