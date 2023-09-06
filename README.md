@@ -1,4 +1,4 @@
-# kxn-kodkvall-directus
+# kxn-kodkvall-directus  
 The purpose of this project is to get access to a simple web page REST-api, which can run locally on your computer.  
 
 The base setup includes the following content types: home page, about page, pages and posts (with categories).
@@ -25,7 +25,7 @@ Fetch startpage data.
   
 Contains title, hero (id) and content (HTML).
 
-#### http://127.0.0.1:8055/items/startpage?fields=\*.\*
+#### http://127.0.0.1:8055/items/startpage?fields=&ast;.&ast;
 Fetch startpage data, including hero image metadata. This is required when you want to display hero image in frontend. See Assets endpoint example below to learn how to display images in your frontend application.  
   
 Contains title, hero (metadata) and content.
@@ -42,7 +42,7 @@ Fetch all pages data.
 
 Each page contains id, date created, date updated, title, content (HTML), slug, hero (id).
 
-#### http://127.0.0.1:8055/items/pages?fields=\*.\*  
+#### http://127.0.0.1:8055/items/pages?fields=&ast;.&ast;  
 Fetch all pages data including hero image metadata.  
 
 Each page contains id, date created, date updated, title, content (HTML), slug, hero (metadata).  
@@ -53,7 +53,7 @@ Fetch page data by id.
   
 Contains id, date created, date updated, title, content (HTML), slug, hero (id).  
 
-#### http://127.0.0.1:8055/items/pages/{{id}}?fields=\*.\*
+#### http://127.0.0.1:8055/items/pages/{{id}}?fields=&ast;.&ast;  
 Fetch page data by id, including hero metadata.  
   
 Contains id, date created, date updated, title, content (HTML), slug, hero (metadata).  
@@ -63,7 +63,7 @@ Fetch page data by slug.
   
 Contains id, date created, date updated, title, content (HTML), slug, hero (id).  
 
-#### http://127.0.0.1:8055/items/pages?fields=\*.\*&filter[slug][_eq]={{slug}}
+#### http://127.0.0.1:8055/items/pages?fields=&ast;.&ast;&filter[slug][_eq]={{slug}}
 Fetch page data by slug, including hero metadata.  
   
 Contains id, date created, date updated, title, content (HTML), slug, hero (metadata).  
@@ -74,7 +74,7 @@ Fetch all posts data.
 
 Each post contains id, date created, date updated, title, content (HTML), categories (id).  
 
-#### http://127.0.0.1:8055/items/posts?fields=\*.\*.\*  
+#### http://127.0.0.1:8055/items/posts?fields=&ast;.&ast;.&ast;  
 Fetch all posts data including categories metadata.  
 
 Each post contains iid, date created, date updated, title, content (HTML), categories (metadata).  
@@ -90,7 +90,7 @@ Fetch post data by id.
   
 contains id, date created, date updated, title, content (HTML), categories (id).   
 
-#### http://127.0.0.1:8055/items/posts/{{id}}?fields=\*.\*.\*
+#### http://127.0.0.1:8055/items/posts/{{id}}?fields=&ast;.&ast;.&ast;  
 Fetch post data by id, including categories metadata.  
   
 contains id, date created, date updated, title, content (HTML), categories (metadata).  
